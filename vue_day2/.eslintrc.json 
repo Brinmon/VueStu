@@ -1,0 +1,17 @@
+module.exports = {
+  root: true,
+  env: {
+    node: true,
+    'vue/setup-compiler-macros': true, // 👈 这一行非常关键
+  },
+  extends: [
+    'plugin:vue/vue3-essential',
+    'eslint:recommended'
+  ],
+  parserOptions: {
+    ecmaVersion: 2020
+  },
+  rules: {
+    // 如果你想关闭某些规则，可以在这里添加
+  }
+}

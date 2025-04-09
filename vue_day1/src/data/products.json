@@ -1,0 +1,4 @@
+[
+    { "id": 1, "title": "Vue教程", "price": 99 },
+    { "id": 2, "title": "TypeScript指南", "price": 89 }
+]
