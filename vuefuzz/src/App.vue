@@ -1,17 +1,12 @@
 <template>
   <div id="app">
-    <CardManager />
+    <router-view />
   </div>
 </template>
 
 <script>
-import CardManager from './components/CardManager.vue'
-
 export default {
-  name: 'App',
-  components: {
-    CardManager
-  }
+  name: 'App'
 }
 </script>
 

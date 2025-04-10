@@ -3,37 +3,11 @@
     <!-- 数据展示区和创建按钮 -->
     <div class="header-section">
       <StatsDisplay :cards="cards" />
-      <button class="add-card-btn" @click="showAddCardForm = true">
-        <span class="plus-icon">+</span>
-      </button>
-    </div>
 
-    <!-- 添加卡片表单 -->
-    <div v-if="showAddCardForm" class="modal-overlay">
-      <div class="add-card-form">
-        <h3>创建新卡片</h3>
-        <div class="form-group">
-          <label>标题</label>
-          <input v-model="newCard.title" placeholder="输入卡片标题">
-        </div>
-        <div class="form-group">
-          <label>描述</label>
-          <textarea v-model="newCard.description" placeholder="输入卡片描述"></textarea>
-        </div>
-        <div class="form-group">
-          <label>状态</label>
-          <select v-model="newCard.status">
-            <option value="待处理">待处理</option>
-            <option value="进行中">进行中</option>
-            <option value="已完成">已完成</option>
-          </select>
-        </div>
-        <div class="form-actions">
-          <button @click="showAddCardForm = false">取消</button>
-          <button @click="addNewCard">创建</button>
-        </div>
-      </div>
     </div>
+    <button class="add-card-btn" @click="goToEditPage">
+        <span class="plus-icon">+</span>
+    </button>
 
     <div class="main-layout">
       <!-- 卡片网格区域 -->
@@ -134,6 +108,9 @@ export default {
     }
   },
   methods: {
+    goToEditPage() {
+      this.$router.push('/card/edit')
+    },
     addNewCard() {
       if (this.newCard.title) {
         this.cards.push({
