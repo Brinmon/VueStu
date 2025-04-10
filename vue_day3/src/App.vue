@@ -5,8 +5,11 @@
       <div class="left-panel">
         <TodoListComposition msg="生命周期观察器 - 待办事项列表"/>
       </div>
-      <div class="right-panel">
+      <div class="middle-panel">
         <VuexDemo />
+      </div>
+      <div class="right-panel">
+        <RouterDemo />
       </div>
     </div>
   </div>
@@ -15,12 +18,14 @@
 <script>
 import TodoListComposition from './components/TodoListComposition.vue'
 import VuexDemo from './components/VuexDemo.vue'
+import RouterDemo from './components/RouterDemo.vue'
 
 export default {
   name: 'App',
   components: {
     TodoListComposition,
-    VuexDemo
+    VuexDemo,
+    RouterDemo
   },
   created() {
     console.log('App组件被创建');
@@ -38,16 +43,19 @@ export default {
 }
 .container {
   display: flex;
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
 }
-.left-panel {
-  flex: 1;
-  padding: 20px;
-  border-right: 1px solid #eee;
-}
+.left-panel,
+.middle-panel,
 .right-panel {
   flex: 1;
   padding: 20px;
+}
+.left-panel {
+  border-right: 1px solid #eee;
+}
+.middle-panel {
+  border-right: 1px solid #eee;
 }
 </style>
